@@ -33,3 +33,5 @@ inicio.html
 /favicon.ico
 /salida.html
 /favicon.ico
+inicio.html
+/favicon.ico

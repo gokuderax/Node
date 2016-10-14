@@ -4,7 +4,9 @@ var fs = require('fs');
 var querystring = require("querystring");
 
 function iniciar(enrutar, request){
+		console.log(iniciar);
 		function arrancarServidor(peticion, respuesta) {
+			console.log(arrancarServidor);
 			console.log("Se ha conectado un cliente.");
 			
 			var ruta = url.parse(peticion.url).pathname;
