@@ -4,9 +4,16 @@ var net = require('net');
 var server = net.createServer();
 var sockets = [];
 var chatLog = [];
-
+var ids=0;
 server.on('connection', function(socket){
 	console.log("got a net connection");
+	socket.write("Introduce un nombre de usuario");	
+	socket.name = chatLog[0];
+	var client = {
+		id:ids++,
+		name: socket.name
+	}
+	console.log(client);
 	if(chatLog != null){
 		for(var texto in chatLog){
 		socket.write(chatLog[texto].toString());
@@ -15,7 +22,7 @@ server.on('connection', function(socket){
 	sockets.push(socket);
 	socket.on('data', function(data){
 		console.log('got data:', data.toString());
-		chatLog.push(data.toString());	
+		chatLog.push(data);	
 		sockets.forEach(function(otherSocket){
 			if (otherSocket !== socket) {
 				otherSocket.write(data);
