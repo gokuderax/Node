@@ -5,15 +5,17 @@ var server = net.createServer();
 var sockets = [];
 var chatLog = [];
 var ids=0;
+var clients = [];
+var aux;
 server.on('connection', function(socket){
 	console.log("got a net connection");
-	socket.write("Introduce un nombre de usuario");	
-	socket.name = chatLog[0];
 	var client = {
 		id:ids++,
-		name: socket.name
-	}
-	console.log(client);
+		nombre:""
+	};
+	clients[socket.id]=client;
+	aux++;
+	socket.write("Introduce un nombre de usuario: ");	
 	if(chatLog != null){
 		for(var texto in chatLog){
 		socket.write(chatLog[texto].toString());
@@ -21,13 +23,20 @@ server.on('connection', function(socket){
 	}
 	sockets.push(socket);
 	socket.on('data', function(data){
+		if(aux==1){
+			clients[socket.id].nombre=data.toString();
+		}
+		else {
 		console.log('got data:', data.toString());
+						console.log(clients[socket.id]);
 		chatLog.push(data);	
 		sockets.forEach(function(otherSocket){
 			if (otherSocket !== socket) {
-				otherSocket.write(data);
+				otherSocket.write(clients[socket.id].nombre+": "+data);
 			}
+
 	});
+	}
 });
 	socket.on('close', function(){
 		console.log('connection closed');
