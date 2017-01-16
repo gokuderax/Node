@@ -1,0 +1,24 @@
+{
+  "name": "proyectointermodular",
+  "version": "1.0.0",
+  "description": "proyecto para los tres modulos: acceso, psp, interfaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "proyecto",
+    "node",
+    "express",
+    "api",
+    "rest"
+  ],
+  "author": "german",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.7.6",
+    "nodemon": "^1.11.0"
+  }
+}
