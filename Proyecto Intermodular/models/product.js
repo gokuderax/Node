@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ProductSchema= Schema({
 	name:String,
-	pictute:String,
+	picture:String,
 	price: {type: Number, default:0},
-	categoria: {type: String, enum:['computers','phones','accesories']},
+	category: {type: String, enum:['computers','phones','accesories']},
 	description: String
 });
 module.exports=mongoose.model('Product', ProductSchema);
