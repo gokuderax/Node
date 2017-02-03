@@ -29,6 +29,7 @@ function saveProduct(req,res){
 		product.save((err, productStored) => {
 		if(err) res.status(500).send({message:`Error al guardar producto ${err}`});
 		res.status(200).send({product: productStored});
+		res.end();
 
 });
 }
@@ -46,7 +47,8 @@ function deleteProduct(req,res){
 		Product.findByIdAndRemove(productId, (err, productDelete)=>{
 			 if(err) res.status(500).send({message:`No ${productiD}`});
 			 if(err) res.status(500).send({message:`Error al eliminar el producto con id ${productId}`});
-			 	res.status(200).send({message: `el prodcuto ${productId} ha sido eliminado`});
+			 res.status(200).send({message: `el prodcuto ${productId} ha sido eliminado`});
+			 res.end();
 		});
 		
 }

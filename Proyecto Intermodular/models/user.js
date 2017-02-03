@@ -2,34 +2,146 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 const UserSchema =new Schema({
    typeUser:[],
-   nif:{type:String},
-   cif: {type:String},
-   nombre: {type:String},
-   apellido1: {type:String},
-   apellido2: {type:String},
-   tipo_via:{type:String},
-   nombre_via: {type:String},
-   numero: {type:Number},
-   piso: {type:String},
-   puerta: {type:String},
-   cod_postal:{type:String},
-   muncipio: {type:String},
-   provincia: {type:String},
-   pais: {type:String},
-   telefono1: {type:String},
-   telefono2: {type:String},
-   fax: {type:String},
-   email: {type:String,lowercase:true},
-   persona_contacto:{type:String,lowercase:true},
-   tipo_cliente:{type:String,lowercase:true},
-   password:{type:String,select:false},
-   fecha_inicio: {type:Date,default:Date.now()},
-   fecha_fin:  {type:Date,default:Date.now()},
-   cargo:{type:String},
-   lastLogin:{type:Date},
-   observaciones: {type:String},
+   nifcif:{
+      type:String,
+      required: true,
+      unique: true
+   },
+   nombre: {
+      type:String,
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   apellido1: {
+      type:String,
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   apellido2: {
+      type:String,,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]      
+   },
+   tipo_via:{
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   nombre_via: {
+      type:String,     
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   numero: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   piso: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   puerta: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   cod_postal:{
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[10,"Nombre muy largo"]
+   },
+   muncipio: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   provincia: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   pais: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   telefono1: {
+      type:String,      
+      required: true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   telefono2: {
+      type:String,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   fax: {
+      type:String,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   email: {
+      type:String,
+      lowercase:true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   persona_contacto:{
+      type:String,
+      lowercase:true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   tipo_cliente:{
+      type:String,
+      lowercase:true,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   password:{
+      type:String,
+      select:false,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   fecha_inicio: {
+      type:Date,
+      default:Date.now()
+   },
+   fecha_fin:  {
+      type:Date,
+      default:Date.now()
+   },
+   cargo:{
+      type:String,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
+   lastLogin:{
+      type:Date
+   },
+   observaciones: {
+      type:String,
+      minlength[5,"Nombre muy corto"], 
+      maxlength[20,"Nombre muy largo"]
+   },
 
 });
 

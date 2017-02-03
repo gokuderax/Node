@@ -1,17 +1,60 @@
-'use strict';
+'use strict'
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-function compruebaPrecio(price){
-	return price >0;
-}
 const ProductSchema = Schema({
-    name: String,
-    picture: String,
-    price: {type: Number,
-    	    default:0,
-    	    validate:[compruebaPrecio,'El precio tiene que ser mayor que 0']},
-    category: {type: String, enum:['computers', 'phones', 'accesories']},
-    description : String
+	id: {
+		type:String, 
+	    required: true, 
+	    unique: true
+		},
+	referencia: {
+		type:String,
+		required: true,
+	    unique: true
+		},
+	nombre: {
+		type:String,  
+		required: true, 
+		minlength[3,"Nombre muy corto"], 
+		maxlength[15,"Nombre muy largo"]
+		},
+	modelo: {
+		type:String,  
+		required: true, 
+		minlength[15,"Nombre muy corto"], 
+		maxlength[50,"Nombre muy largo"]
+		},
+	descripcion: {
+		type:String,  
+		required: true,
+		minlength[15,"Nombre muy corto"], 
+		maxlength[250,"Nombre muy largo"]
+		},
+	categoria: {
+		type:String, 
+		required: true, 
+		unique: true, 
+		enum: ['phones','computers','accesories']
+		},
+	importe: {
+		type:Number,
+		required: true, 
+		min[0,"No puede ser negativo"]
+		},
+	iva: {
+		type:Number,
+		default:21
+	},
+	proveedor: {
+		type:String,
+		required: true,
+	},
+	tienda_stock: []
 });
-module.exports = mongoose.model('Product', ProductSchema);
+
+	ProductSchema.path('tienda_stock').validate(function(value) {
+  return value.length;
+},"tienda_stock' no puede estar vacio");
+
+module.exports = mongoose.model('product', ProductSchema);
