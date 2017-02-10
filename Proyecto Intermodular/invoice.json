@@ -1,0 +1,19 @@
+{
+   "invoice": {
+      "id": 23,
+      "id_client": 3,
+      "id_shop": 4,
+      "id_salesperson": 3,
+      "taxes": 21,
+      "base_total": 1000,
+      "base_advanced": 1300,
+      "observations": "El cliente no tiene claro la compra",
+      "validated": true,
+      "date": "2011-09-23",
+      "products": [
+                   { "id": 1, "quantity": 12 },
+	             { "id": 138, "quantity": 5 }, 
+                   { "id": 38, "quantity": 285 }
+	           ]
+      }
+}

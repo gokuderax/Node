@@ -16,20 +16,20 @@ const ProductSchema = Schema({
 	nombre: {
 		type:String,  
 		required: true, 
-		minlength[3,"Nombre muy corto"], 
-		maxlength[15,"Nombre muy largo"]
+		minlength:[3,"Nombre muy corto"], 
+		maxlength:[15,"Nombre muy largo"]
 		},
 	modelo: {
 		type:String,  
 		required: true, 
-		minlength[15,"Nombre muy corto"], 
-		maxlength[50,"Nombre muy largo"]
+		minlength:[15,"Nombre muy corto"], 
+		maxlength:[50,"Nombre muy largo"]
 		},
 	descripcion: {
 		type:String,  
 		required: true,
-		minlength[15,"Nombre muy corto"], 
-		maxlength[250,"Nombre muy largo"]
+		minlength:[15,"Nombre muy corto"], 
+		maxlength:[250,"Nombre muy largo"]
 		},
 	categoria: {
 		type:String, 
@@ -40,7 +40,7 @@ const ProductSchema = Schema({
 	importe: {
 		type:Number,
 		required: true, 
-		min[0,"No puede ser negativo"]
+		min:[0,"No puede ser negativo"]
 		},
 	iva: {
 		type:Number,
