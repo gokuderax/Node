@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
+var SALT_WORK_FACTOR = 10;
 
 const UserSchema =new Schema({
    typeUser:[],
@@ -29,41 +31,31 @@ const UserSchema =new Schema({
    },
    tipo_via:{
       type:String,      
-      required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      required: true
    },
    nombre_via: {
       type:String,     
       required: true,
-      minlength:[5,"Nombre muy corto"], 
+      minlength:[3,"Nombre muy corto"], 
       maxlength:[20,"Nombre muy largo"]
    },
    numero: {
       type:String,      
-      required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      required: true
    },
    piso: {
       type:String,      
-      required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      required: true
    },
    puerta: {
       type:String,      
-      required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      required: true
    },
    cod_postal:{
       type:String,      
-      required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[10,"Nombre muy largo"]
+      required: true
    },
-   muncipio: {
+   municipio: {
       type:String,      
       required: true,
       minlength:[5,"Nombre muy corto"], 
@@ -78,19 +70,19 @@ const UserSchema =new Schema({
    pais: {
       type:String,      
       required: true,
-      minlength:[5,"Nombre muy corto"], 
+      minlength:[2,"Nombre muy corto"], 
       maxlength:[20,"Nombre muy largo"]
    },
    telefono1: {
       type:String,      
       required: true,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      minlength:[8,"Nombre muy corto"], 
+      maxlength:[10,"Nombre muy largo"]
    },
    telefono2: {
       type:String,
-      minlength:[5,"Nombre muy corto"], 
-      maxlength:[20,"Nombre muy largo"]
+      minlength:[8,"Nombre muy corto"], 
+      maxlength:[10,"Nombre muy largo"]
    },
    fax: {
       type:String,
@@ -117,7 +109,6 @@ const UserSchema =new Schema({
    },
    password:{
       type:String,
-      select:false,
       minlength:[5,"Nombre muy corto"], 
       maxlength:[20,"Nombre muy largo"]
    },
@@ -144,5 +135,25 @@ const UserSchema =new Schema({
    },
 
 });
-
+UserSchema.pre('save', function(next){
+   var user = this; 
+   if(!user.isModified('password')) return next();//hasheamos si camb
+   bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+      if(err) return next(err);
+      bcrypt.hash(user.password, salt, function(err, hash){
+         if(err) return next(err); 
+         user.password = hash;
+         next();
+      });
+   });
+});
+UserSchema.methods.comparePassword = function(candidatePassword, cb){
+   bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
+   if(err) return cb(err);
+   cb(null, isMatch);
+   });
+};
+UserSchema.statics.findByUsername = function(username, cb){
+   this.findOne({username: username}, cb);
+}
 module.exports = mongoose.model('User', UserSchema);

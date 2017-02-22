@@ -17,7 +17,10 @@
   "author": "german",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "express": "^4.14.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.17.1",
     "mongoose": "^4.7.6",
     "nodemon": "^1.11.0"
   }
