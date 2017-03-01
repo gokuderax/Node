@@ -1,0 +1,2 @@
+PID: 5060 NºRequest: 1 Timestamp: 1488395393906 Ruta: /initialize Direccion ip: 192.168.30.103
+PID: 5060 NºRequest: 2 Timestamp: 1488395417087 Ruta: /secret Direccion ip: 192.168.30.103
