@@ -9,6 +9,8 @@ namespace App_Escritorio
 {
     class User
     {
+        [JsonProperty("_id")]
+        public String _id { get; set; }
         [JsonProperty("nifcif")]
         public String nifcif { get; set; }
         [JsonProperty("nombre")]

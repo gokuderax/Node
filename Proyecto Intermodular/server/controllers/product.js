@@ -5,7 +5,7 @@ function getProducts(req,res){
 		Product.find({}, (err, products) => {
 		if(err) return res.status(500).send({message: 'Error en petición ${err}' });
 		if(!products) return res.status(404).send({message: 'No se han encontrado productos'});
-		res.status(200).send({products});
+		res.status(200).send(products);
 		res.end();
 });
 }
@@ -14,23 +14,24 @@ function getProduct(req, res) {
     Product.findById(productId, (err, products) => {
         if(err) return res.status(500).send({message: `Error en petición ${err}` });
         if(!products) return res.status(404).send({message: 'No se han encontrado productos'});
-        res.status(200).send({products});
+        res.status(200).send([products]);
         res.end();
     });
 }
 function saveProduct(req,res){
-		let product = new Product();
-		product.name = req.body.name;
-		product.picture = req.body.picture;
-		product.price = req.body.price;
-		product.category = req.body.category;
-		product.description = req.body.description;
-
+		let product = new Product(req.body);
+		console.log(req.body);
 		product.save((err, productStored) => {
-		if(err) res.status(500).send({message:`Error al guardar producto ${err}`});
-		res.status(200).send({product: productStored});
-		res.end();
+		if(err){
+			res.status(500).send({message:`Error al guardar producto ${err}`});
+			console.log(err);
 
+			} 
+		else {
+			res.status(200).send([productStored]);
+
+		}	
+	res.end();
 });
 }
 function updateProduct(req,res){

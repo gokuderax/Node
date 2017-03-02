@@ -3,9 +3,10 @@ D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.pdb
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\Newtonsoft.Json.dll
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\Newtonsoft.Json.xml
-D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App Escritorio.csprojResolveAssemblyReference.cache
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.baml
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.g.cs
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
@@ -13,5 +14,4 @@ D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App Escritorio.csproj.GenerateResource.Cache
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
-D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.baml
-D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.g.cs
+D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App Escritorio.csprojResolveAssemblyReference.cache

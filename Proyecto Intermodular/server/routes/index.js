@@ -9,22 +9,22 @@ var requireAuth = require('../lib/requireAuth');
 
 const api = express.Router();
 //Listening
-api.get('/product',jwtauth, requireAuth, productController.getProducts);
-api.get('/product/:productId',jwtauth, requireAuth, productController.saveProduct);
-api.post('/product',jwtauth, requireAuth, productController.saveProduct);
+api.get('/product', productController.getProducts);
+api.get('/product/:productId', productController.saveProduct);
+api.post('/product',productController.saveProduct);
 api.put('/product/:productId',jwtauth, requireAuth, productController.updateProduct);
 api.delete('/product/:productId',jwtauth, requireAuth,productController.deleteProduct);
 
 api.post('/token', userController.getToken);
-api.get('/user',jwtauth, requireAuth, userController.getUsers);
-api.get('/user/:userId',jwtauth, requireAuth, userController.getUser);
+api.get('/user', userController.getUsers);
+api.get('/user/:userId', userController.getUser);
 api.post('/user', userController.saveUser);
-api.put('/user/:userId',jwtauth, requireAuth,userController.updateUser);
-api.delete('/user/:userId',jwtauth, requireAuth, userController.deleteUser);
+api.put('/user/:userId',userController.updateUser);
+api.delete('/user/:userId',userController.deleteUser);
 
-api.get('/shop',jwtauth, requireAuth, shopController.getShops);
+api.get('/shop', shopController.getShops);
 api.get('/shop/:shopId',jwtauth, requireAuth,shopController.getShop);
-api.post('/shop',jwtauth, requireAuth,shopController.saveShop);
+api.post('/shop',shopController.saveShop);
 api.put('/shop/:shopId',shopController.updateShop);
 api.delete('/shop/:shopId', shopController.deleteShop);
 

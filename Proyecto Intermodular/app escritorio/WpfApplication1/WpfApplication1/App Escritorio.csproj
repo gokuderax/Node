@@ -60,7 +60,9 @@
     <Compile Include="Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="Rest.cs" />
+    <Compile Include="Shop.cs" />
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

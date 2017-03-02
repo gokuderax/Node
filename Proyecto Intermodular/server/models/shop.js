@@ -27,7 +27,7 @@ const TiendaSchema = Schema({
       	maxlength:[20,"Nombre muy largo"]
 	},
 	numero: {
-		type: Number,
+		type: String,
 		required: true,
       	minlength:[5,"Nombre muy corto"], 
       	maxlength:[20,"Nombre muy largo"]

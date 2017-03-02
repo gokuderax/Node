@@ -22,13 +22,13 @@ const ProductSchema = Schema({
 	modelo: {
 		type:String,  
 		required: true, 
-		minlength:[15,"Nombre muy corto"], 
+		minlength:[5,"Nombre muy corto"], 
 		maxlength:[50,"Nombre muy largo"]
 		},
 	descripcion: {
 		type:String,  
 		required: true,
-		minlength:[15,"Nombre muy corto"], 
+		minlength:[5,"Nombre muy corto"], 
 		maxlength:[250,"Nombre muy largo"]
 		},
 	categoria: {

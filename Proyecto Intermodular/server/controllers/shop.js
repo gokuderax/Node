@@ -5,7 +5,7 @@ function getShops(req,res){
 		Shop.find({}, (err, shops) => {
 		if(err) return res.status(500).send({message: 'Error en petición ${err}' });
 		if(!shops) return res.status(404).send({message: 'No se han encontrado usuarios'});
-		res.status(200).send({shops});
+		res.status(200).send(shops);
 		res.end();
 });
 }
@@ -14,7 +14,7 @@ function getShop(req, res) {
     Shop.findById(shopId, (err, shops) => {
         if(err) return res.status(500).send({message: `Error en petición ${err}` });
         if(!shops) return res.status(404).send({message: 'No se han encontrado usuarios'});
-        res.status(200).send({shops});
+        res.status(200).send([shops]);
         res.end();
     });
 }
@@ -23,10 +23,12 @@ function saveShop(req,res){
 		let shop = new Shop(req.body);
 
 		shop.save((err, shopStored) => {
-		if(err)
+		if(err){
+		 console.log(err);
 		 res.status(500).send({message:`Error al guardar usuario ${err}`});
+		}
 		else
-		res.status(200).send({shop: shopStored});
+		res.status(200).send([shopStored]);
 
 	res.end();
 	});
@@ -36,7 +38,7 @@ function updateShop(req,res){
 		let update = req.body;
 		Shop.findByIdAndUpdate(shopId,update, (err, productUpdated)=>{
 			if(err) res.status(500).send({message:`Error al actualizar usuario ${err}`});
-		res.status(200).send({product: productUpdated});
+		res.status(200).send([productUpdated]);
 		res.end();
 		});
 }
