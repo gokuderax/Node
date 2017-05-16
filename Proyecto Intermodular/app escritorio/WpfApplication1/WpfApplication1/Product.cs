@@ -31,6 +31,6 @@ namespace App_Escritorio
         [JsonProperty("proveedor")]
         public String proveedor { get; set; }
         [JsonProperty("tienda_stock")]
-        public ArrayList tienda_stock { get; set; }
+        public String tienda_stock { get; set; }
     }
 }

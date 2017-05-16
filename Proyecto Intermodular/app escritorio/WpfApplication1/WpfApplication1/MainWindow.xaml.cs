@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAnimatedGif;
 
 namespace App_Escritorio
 {
@@ -21,14 +22,43 @@ namespace App_Escritorio
     /// </summary>
     public partial class MainWindow : Window
     {
+        ImageAnimationController img;
         public MainWindow()
         {
             InitializeComponent();
+ 
         }
 
         private void btnRegistroUser(object sender, RoutedEventArgs e)
         {
+            User user = new User();
+            Rest rest = new Rest();
+            Principal principal = new Principal();
 
+            user.email = txtLoginEmail.Text;
+            user.password = txtLoginPass.Password;
+            string result = rest.login(user, "http://localhost:3000/v1/token/");
+                if(result.Contains("No")|| result.Contains("err"))
+                 {
+                     principal.Show();
+                     this.Close();
+                 }
+                else
+               {
+                principal.Show();
+                this.Close();
+                MessageBox.Show("Login correcto");
+            }
+
+                principal.Show();
+                this.Close();
+                        
+        }
+
+        private void btnEntrar(object sender, RoutedEventArgs e)
+        {
+            img = ImageBehavior.GetAnimationController(gifEntrar);
+            img.Play();
         }
 
     }

@@ -3,12 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="App_Escritorio.Principal"
         Title="Principal" Height="472.95" Width="771.923">
+    <Window.Background>
+        <ImageBrush ImageSource="Media/fondo.jpg"></ImageBrush>
+    </Window.Background>
     <Grid>
         <GroupBox x:Name="gbUsuarios" Header="------Usuarios-------&#xA;" HorizontalAlignment="Left"  Margin="30,23,0,-172" VerticalAlignment="Top" Width="105" Height="573" Visibility="Visible" >
             <StackPanel HorizontalAlignment="Left" Height="361" VerticalAlignment="Top" Width="95">
-                <Button x:Name="InsertUsuarios" Height="85" Content="Insertar" Click="btnControlUsuario_Click" />
-                <Button x:Name="BuscarUsuarios"  Height="85" Content="Buscar"  Click="btnControlUsuario_Click" />
-                <Button x:Name="ModificarUsuarios"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click"  />
+                <Button x:Name="InsertUsuarios" Height="85" Content="Insertar" Click="btnControlUsuario_Click" >
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/userAdd.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BuscarUsuarios"  Height="85" Content="Buscar"  Click="btnControlUsuario_Click" >
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/userFind.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="ModificarUsuarios"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click" >
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/userMod.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </GroupBox>
         <GroupBox x:Name="gbTienda" Header="------Tiendas-------&#xA;" HorizontalAlignment="Left"  Margin="30,23,0,-172" VerticalAlignment="Top" Width="105" Height="573" Visibility="Hidden">
@@ -29,9 +50,9 @@
 
         <GroupBox x:Name="gbFactura" Header="------Facturas-------;" HorizontalAlignment="Left" Margin="25,23,0,0" VerticalAlignment="Top" Width="105" Height="391" RenderTransformOrigin="0.511,0.511" Visibility="Hidden" >
             <StackPanel HorizontalAlignment="Left" Height="357" VerticalAlignment="Top" Width="95" Margin="0,0,0,-4.2">
-                <Button x:Name="InsertFactura" Height="85" />
-                <Button x:Name="BuscarFactura"  Height="85" />
-                <Button x:Name="ModificarFactura"  Height="85" />
+                <Button x:Name="InsertFactura" Height="85" Content="Insertar" Click="btnControlUsuario_Click"/>
+                <Button x:Name="BuscarFactura"  Height="85" Content="Buscar" Click="btnControlUsuario_Click"/>
+                <Button x:Name="ModificarFactura"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click" />
             </StackPanel>
         </GroupBox>
         <Menu HorizontalAlignment="Left" Height="23" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="766">
@@ -117,9 +138,11 @@
                         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="177,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                         <TextBox x:Name="txtPerContacto" HorizontalAlignment="Left" Height="23" Margin="177,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                         <TextBox x:Name="txtTipoClie" HorizontalAlignment="Left" Height="23" Margin="177,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Margin="177,536,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.ColumnSpan="2"/>
                         <TextBox x:Name="txtCargo" HorizontalAlignment="Left" Height="23" Margin="177,564,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                         <TextBox x:Name="txtObservaciones" HorizontalAlignment="Left" Height="23" Margin="177,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-                        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="177,627,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <ComboBox x:Name="cbTipoU" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,622,0,0" Width="120"/>
+                        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="177,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                         <Label Content="nif/cif" HorizontalAlignment="Left" Margin="71,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634"/>
                         <Label Content="Nombre" HorizontalAlignment="Left" Margin="71,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634"/>
                         <Label Content="Primer apellido" HorizontalAlignment="Left" Margin="71,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634"/>
@@ -143,10 +166,10 @@
                         <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,536,0,0"/>
                         <Label Content="Cargo" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="73,564,0,0"/>
                         <Label Content="Observaciones" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="73,592,0,0"/>
-                        <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,624,0,0" Width="45"/>
-                        <Button x:Name="btnEnviarUsuario" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="121,668,0,0" VerticalAlignment="Top" Width="110" Click="btnHacerCosas"/>
-                        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="268,668,0,0" VerticalAlignment="Top" Width="75"/>
-                        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Margin="177,536,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.ColumnSpan="2"/>
+                        <Label Content="tipo usuario" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,624,0,0" Width="90"/>
+                        <Label x:Name="lblId" Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,654,0,0" Width="45"/>
+                        <Button x:Name="btnEnviarUsuario" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="121,678,0,0" VerticalAlignment="Top" Width="110" Click="btnHacerCosas"/>
+                        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="268,678,0,0" VerticalAlignment="Top" Width="75"/>
                     </Grid>
                 </GroupBox>
             </ScrollViewer>
@@ -191,6 +214,44 @@
                     <Label Content="Buscar por id:" Margin="121,56,258,80" />
                     <TextBox x:Name="txtIdBP" HorizontalAlignment="Left" Height="23" Margin="207,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Button x:Name="btnBuscarProduct" Content="Enviar" HorizontalAlignment="Left" Margin="207,130,0,0" VerticalAlignment="Top" Width="92" Click="btnHacerCosas" Height="24" RenderTransformOrigin="0.483,0.542"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Margin="135,23,-0.4,194.2">
+            <ScrollViewer x:Name="scwInvoices" Margin="0,0,10,0" Visibility="Hidden">
+                <GroupBox x:Name="gbInvoices" Header="Insertar Producto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="423" Width="621" >
+                    <Grid RenderTransformOrigin="0.345,0.494" Margin="0,0,0,-340.8">
+                        <TextBox x:Name="txtIdI" HorizontalAlignment="Left" Height="23" Margin="177,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <ComboBox x:Name="cbIdU" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,33,0,0" Width="120"/>
+                        <ComboBox x:Name="cbIdT" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,60,0,0" Width="120"/>
+                        <ComboBox x:Name="cbIdSP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,89,0,0" Width="120"/>
+                        <TextBox x:Name="txtTaxesI" HorizontalAlignment="Left" Height="23" Margin="177,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                        <TextBox x:Name="txtBaseTotalI" HorizontalAlignment="Left" Height="23" Margin="177,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtBaseAdvancedI" HorizontalAlignment="Left" Height="23" Margin="177,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtObservationsI" HorizontalAlignment="Left" Height="23" Margin="177,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtValidatedI" HorizontalAlignment="Left" Height="23" Margin="177,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtDateI" HorizontalAlignment="Left" Height="23" Margin="177,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <ComboBox x:Name="cbIdPI" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,270,0,0" Width="120"/>
+                        <Label Content="id" HorizontalAlignment="Left" Margin="71,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634"/>
+                        <Label Content="id_client" HorizontalAlignment="Left" Margin="71,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634"/>
+                        <Label Content="id_shop" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,60,0,0"/>
+                        <Label Content="id_salesperson" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="73,89,0,0"/>
+                        <Label Content="taxes" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,117,0,0"/>
+                        <Label Content="base_total" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,148,0,0"/>
+                        <Label Content="base_advanced" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,175,0,0"/>
+                        <Label Content="observations" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,205,0,0"/>
+                        <Label Content="validated" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,230,0,0"/>
+                        <Label Content="date" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,250,0,0"/>
+                        <Label Content="Products" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.705,0.634" Margin="71,270,0,0"/>
+                        <Button x:Name="btnEnviarProducto1" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="123,290,0,0" VerticalAlignment="Top" Width="110" Click="btnHacerCosas"/>
+                    </Grid>
+                </GroupBox>
+            </ScrollViewer>
+            <GroupBox x:Name="gbControlBuscarInvoice" Header="Buscar Productos" HorizontalAlignment="Left" VerticalAlignment="Top" Height="218" Visibility="Hidden" Width="612" >
+                <Grid Margin="135,35,-0.8,-3.8">
+                    <Label Content="Buscar por id:" Margin="121,56,258,80" />
+                    <TextBox x:Name="txtIdBI" HorizontalAlignment="Left" Height="23" Margin="207,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnBuscarInvoice" Content="Enviar" HorizontalAlignment="Left" Margin="207,130,0,0" VerticalAlignment="Top" Width="92" Click="btnHacerCosas" Height="24" RenderTransformOrigin="0.483,0.542"/>
                 </Grid>
             </GroupBox>
         </Grid>

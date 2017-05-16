@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace App_Escritorio
 {
     class User
     {
+        [JsonProperty("typeUser")]
+        public String[] typeUser { get; set; }
         [JsonProperty("_id")]
         public String _id { get; set; }
         [JsonProperty("nifcif")]

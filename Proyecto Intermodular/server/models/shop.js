@@ -29,8 +29,6 @@ const TiendaSchema = Schema({
 	numero: {
 		type: String,
 		required: true,
-      	minlength:[5,"Nombre muy corto"], 
-      	maxlength:[20,"Nombre muy largo"]
 	},
 	cod_postal: {
 		type: String,

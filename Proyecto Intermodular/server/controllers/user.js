@@ -11,6 +11,7 @@ function getUsers(req,res){
 		User.find({}, (err, users) => {
 		if(err) return res.status(500).send({message: 'Error en petición ${err}' });
 		if(!users) return res.status(404).send({message: 'No se han encontrado usuarios'});
+		console.log(users);
 		res.status(200).send(users);
 		res.end();
 });
@@ -62,22 +63,28 @@ function deleteUser(req,res){
 		
 }
 function getToken(req, res){
-	console.log("xiENTRAMOS en GET /token"); 
+	console.log("ENTRAMOS en GET /token"); 
 		
 	if(req.headers.email && req.headers.password){
 	console.log(req.headers.email );
 	console.log(req.headers.password);
 		User.findOne({email: req.headers.email}, function(err, user){
 			if(err){
+					console.log("error aqui 1");
+
 			 res.send('Authentication error - No usuario', 401); }
 			else {
 				user.comparePassword(req.headers.password, function(err, isMatch){
-				if(err) res.send('Error in password', 401); 	
+				if(err){
+					res.send('Error in password', 401); 
+								console.log("error aqui 2");	
+				} 
 				if(isMatch){
 					var expires = moment().add('days', 7).valueOf();
 					var token = jwt.encode({ iss: user.id, exp: expires}, app.get('jwtTokenSecret'));
 					res.json({token: token, expires: expires, user: user.toJSON()});
 				}else{
+								console.log("error aqui 3");
 					res.send('Autenthication error - No coinciden passwords', 401);	
 				}
 			});
@@ -85,6 +92,7 @@ function getToken(req, res){
 
 		});
 	}else{
+					console.log("error aqui 4");
 		//No username provided, or invalid POST request. For simplicity, just return a 401 code
 		res.send('Aunthentication error - No username provided - Invalid POST request', 401);
 	}
