@@ -34,25 +34,79 @@
         </GroupBox>
         <GroupBox x:Name="gbTienda" Header="------Tiendas-------&#xA;" HorizontalAlignment="Left"  Margin="30,23,0,-172" VerticalAlignment="Top" Width="105" Height="573" Visibility="Hidden">
             <StackPanel HorizontalAlignment="Left" Height="535" VerticalAlignment="Top" Width="95">
-                <Button x:Name="InsertTiendas" Height="85" Content="Insertar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="BuscarTiendas"  Height="85" Content="Buscar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="ModificarTiendas"  Height="85" Content="Modificar" Click="btnControlUsuario_Click"/>
+                <Button x:Name="InsertTiendas" Height="85" Content="Insertar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/shopAdd.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BuscarTiendas"  Height="85" Content="Buscar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/shopFind.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="ModificarTiendas"  Height="85" Content="Modificar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/shopMod.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </GroupBox>
 
         <GroupBox x:Name="gbProductos" Header="------Productos-------&#xA;" HorizontalAlignment="Left"  Margin="30,23,0,-172" VerticalAlignment="Top" Width="105" Height="573" Visibility="Hidden">
             <StackPanel HorizontalAlignment="Left" Height="535" VerticalAlignment="Top" Width="95">
-                <Button x:Name="InsertProductos" Height="85" Content="Insertar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="BuscarProductos"  Height="85" Content="Buscar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="ModificarProductos"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click" />
+                <Button x:Name="InsertProductos" Height="85" Content="Insertar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/productAdd.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BuscarProductos"  Height="85" Content="Buscar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/productFind.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="ModificarProductos"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/productMod.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </GroupBox>
 
         <GroupBox x:Name="gbFactura" Header="------Facturas-------;" HorizontalAlignment="Left" Margin="25,23,0,0" VerticalAlignment="Top" Width="105" Height="391" RenderTransformOrigin="0.511,0.511" Visibility="Hidden" >
             <StackPanel HorizontalAlignment="Left" Height="357" VerticalAlignment="Top" Width="95" Margin="0,0,0,-4.2">
-                <Button x:Name="InsertFactura" Height="85" Content="Insertar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="BuscarFactura"  Height="85" Content="Buscar" Click="btnControlUsuario_Click"/>
-                <Button x:Name="ModificarFactura"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click" />
+                <Button x:Name="InsertFactura" Height="85" Content="Insertar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/invoiceAdd.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="BuscarFactura"  Height="85" Content="Buscar" Click="btnControlUsuario_Click">
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/invoiceFind.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="ModificarFactura"  Height="85" Content="Modificar"  Click="btnControlUsuario_Click" >
+                    <Button.Template >
+                        <ControlTemplate>
+                            <Image Source="media/invoiceMod.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </GroupBox>
         <Menu HorizontalAlignment="Left" Height="23" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="766">

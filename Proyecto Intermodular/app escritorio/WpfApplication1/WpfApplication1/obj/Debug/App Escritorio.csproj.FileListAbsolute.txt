@@ -19,3 +19,23 @@ D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App Escritorio.csprojResolveAssemblyReference.cache
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfAnimatedGif.dll
 D:\DAM2\psp\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfAnimatedGif.xml
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\media\entrar.gif
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.pdb
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\Newtonsoft.Json.dll
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfAnimatedGif.dll
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\Newtonsoft.Json.xml
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\bin\Debug\WpfAnimatedGif.xml
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.baml
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\Principal.g.cs
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_Content.g.cs
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App_Escritorio.Properties.Resources.resources
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\App Escritorio.csproj.GenerateResource.Cache
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
+F:\2DAM\procesos y servicios\Proyecto Intermodular\app escritorio\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb

@@ -117,6 +117,16 @@
     <Content Include="media\entrar.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="media\invoiceAdd.png" />
+    <Resource Include="media\invoiceFind.png" />
+    <Resource Include="media\invoiceMod.png" />
+    <Resource Include="media\productAdd.png" />
+    <Resource Include="media\productFind.png" />
+    <Resource Include="media\productMod.png" />
+    <Resource Include="media\shopAdd.png" />
+    <Resource Include="media\shopFind.png" />
+    <Resource Include="media\shopMod.png" />
+    <Resource Include="media\kiosco.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\userAdd.png" />

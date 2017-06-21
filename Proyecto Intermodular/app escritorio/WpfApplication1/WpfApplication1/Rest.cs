@@ -229,7 +229,11 @@ namespace App_Escritorio
             }
             catch (WebException exceptionWEB_GET)
             {
-                MessageBox.Show(exceptionWEB_GET.Message.ToString());
+
+                StreamReader sr = new StreamReader(exceptionWEB_GET.Response.GetResponseStream(), Encoding.UTF8);
+                String cadena = sr.ReadToEnd();
+
+                MessageBox.Show(cadena.ToString());
                 return null;
             }
             catch (Exception exceptionGET)
@@ -337,7 +341,11 @@ namespace App_Escritorio
             }
             catch (WebException exceptionWEB_GET)
             {
-                MessageBox.Show(exceptionWEB_GET.Message.ToString());
+
+                StreamReader sr = new StreamReader(exceptionWEB_GET.Response.GetResponseStream(), Encoding.UTF8);
+                String cadena = sr.ReadToEnd();
+
+                MessageBox.Show(cadena.ToString());
                 return null;
             }
             catch (Exception exceptionGET)
@@ -445,7 +453,11 @@ namespace App_Escritorio
             }
             catch (WebException exceptionWEB_GET)
             {
-                MessageBox.Show(exceptionWEB_GET.Message.ToString());
+
+                StreamReader sr = new StreamReader(exceptionWEB_GET.Response.GetResponseStream(), Encoding.UTF8);
+                String cadena = sr.ReadToEnd();
+
+                MessageBox.Show(cadena.ToString());
                 return null;
             }
             catch (Exception exceptionGET)

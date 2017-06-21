@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,7 +60,15 @@ namespace App_Escritorio
         {
             img = ImageBehavior.GetAnimationController(gifEntrar);
             img.Play();
+
+            esperar();
+          
         }
 
+        public async void esperar()
+        {
+            await Task.Delay(1500);
+            Canvas.SetZIndex(panel, 3);
+        }
     }
 }

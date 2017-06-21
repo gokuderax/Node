@@ -113,22 +113,30 @@ namespace App_Escritorio
             cbIdU.Items.Clear();
             cbIdT.Items.Clear();
             cbIdPI.Items.Clear();
-            listUsers = rest.getUser("http://localhost:3000/v1/user/");
 
-            for (int i = 0; i < listUsers.Count; i++)
-            {
-                    cbIdU.Items.Add(listUsers[i].nombre);
+            listUsers = rest.getUser("http://localhost:3000/v1/user/");
+            if (listUsers != null) { 
+                   for (int i = 0; i < listUsers.Count; i++)
+                   {
+                     cbIdU.Items.Add(listUsers[i].nombre);
+                  }
             }
-            
+
             listShops = rest.getShop("http://localhost:3000/v1/shop/");
-            for (int i = 0; i < listShops.Count; i++)
-            {
-                cbIdT.Items.Add(listShops[i].nombre);
+            if (listShops != null) {
+                for (int i = 0; i < listShops.Count; i++)
+                 {
+                    cbIdT.Items.Add(listShops[i].nombre);
+                 }
             }
+
             listProducts = rest.getProduct("http://localhost:3000/v1/product/");
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                cbIdPI.Items.Add(listProducts[i].nombre);
+
+            if (listProducts != null) { 
+                for (int i = 0; i < listProducts.Count; i++)
+                 {
+                    cbIdPI.Items.Add(listProducts[i].nombre);
+                  }
             }
         }
 
